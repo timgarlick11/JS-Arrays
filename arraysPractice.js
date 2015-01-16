@@ -4,8 +4,10 @@
 var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item the given array.
 
-  //Code Here
-
+  var first = function(arr) {
+    return arr[0];
+  }
+first(arr);
 
 //Next problem
 
@@ -16,7 +18,11 @@ var arr = [40,50,60];
 
 
   //Code Here
-
+var last = function() {        // or you could  var last = function() {
+     return arr[arr.length - 1];       // return arr[3]                            
+}                                 //}
+                                    //last(arr);
+last(arr);
 
 //Next Problem
 
@@ -24,7 +30,11 @@ var arr = [40,50,60];
 var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
-  //Code Here
+  var looper = function() {
+    for (var i = 0; i < family.length; i++)
+      alert(family[i]);
+  }
+  looper(family);
 
 
 //Next problem
@@ -34,7 +44,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
-  //Code Here
+  var reversedLooper = function() {
+    for (var i = letters.length - 1; i >= 0; i--){
+            alert(letters[i]);
+    };
+  }
+  reversedLooper(letters);
 
 
 //Next Problem
@@ -43,33 +58,57 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
-  //Code Here
+  var evenFinder = function() {
+    for(var i = 0; i < nums.length; i++) {
+      if (nums[i] % 2 !== 0 )  {
+        nums.splice(i, 1);
+        i--; // you do this because when it loops and splices things out items are removed therefore they are shifted down a position and the loop could skip it. i-- subtracts a value everytime you splice osmething out.
+      }
+    }
+  }
+  evenFinder(nums);
+  nums;
 
 
 //Next problem
 
 
 var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
-var evens = [];
-var odds = []
+var evens = [,312,432,532];//I added these numbers for testing purposes
+var odds = [];
 //Write a function called divider that is given three arguments, nums, evens, and odds.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
 
+var divider = function() {
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 === 0){
+      evens.push(nums[i]) // ask if there is a way you can do it using the slice method!!!!!!
+    } else {
+    odds.push(nums[i]) } 
+  }
 
-
-  //Code Here
+}
+divider(nums, evens, odds);
 
 
 //Next Problem
 
 
 var getRandomArbitrary = function() {
-  return Math.floor(Math.random() * (30 - 0) + 0);
+  return Math.floor(Math.random() * 6);//math.floor rounds a number down to the nearest integer
 }
-var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+var numbers = [0,1,2,3,4,5];
 //Above your given a function that will return a random number between 0 and 30, and an array full or numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
-  //Code Here
+var finder = function() {
+ var randomNumber = getRandomArbitrary();
+ for (var i = 0; i < numbers.length; i++) {
+  if (numbers[i] === randomNumber) {
+    return true;
+  } else {return false;}
+ }
+}
+finder();
 
 
 //Next problem

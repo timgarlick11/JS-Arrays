@@ -4,7 +4,7 @@
 var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item the given array.
 
-  var first = function(arr) {
+  var first = function() {
     return arr[0];
   }
 first(arr);
@@ -18,10 +18,10 @@ var arr = [40,50,60];
 
 
   //Code Here
-var last = function() {        // or you could  var last = function() {
-     return arr[arr.length - 1];       // return arr[3]                            
-}                                 //}
-                                    //last(arr);
+var last = function() {        
+     return arr.length - 1;                                  
+}                                 
+                                    
 last(arr);
 
 //Next Problem
@@ -95,22 +95,20 @@ divider(nums, evens, odds);
 
 
 var getRandomArbitrary = function() {
-  return Math.floor(Math.random() * 6);//math.floor rounds a number down to the nearest integer
+  return Math.floor(Math.random() * (30 - 0) + 0);
 }
-var numbers = [0,1,2,3,4,5];
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above your given a function that will return a random number between 0 and 30, and an array full or numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
-var finder = function() {
- var randomNumber = getRandomArbitrary();
- for (var i = 0; i < numbers.length; i++) {
-  if (numbers[i] === randomNumber) {
-    return true;
-  } else {return false;}
- }
-}
-finder();
-
-
+var finder = function(random) {
+   for (var i = 0; i < numbers.length; i++) {
+ if (numbers[i] === random) {
+   return true;
+  }
+   }
+return false;
+};
+finder(getRandomArbitrary());
 //Next problem
 
 
@@ -118,7 +116,10 @@ finder();
 var str = 'this is my sentence';
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been reversed
 
-  //Code Here
+var reverse = function(str) {
+ return str.split(" ").reverse().join(" ");
+}
+reverse(str);
 
 
 //Next Problem
@@ -135,7 +136,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
-  //Code Here
+  var removeItem = function(myGroceryList,)
 
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -148,7 +149,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+  var maker = function(arr) {
+    arr = [];// empty array
+    for (var i = 1; i <= 215; i++) { // basically looping through the numbers 1 thourhg 215 and then pushing all of them to an array
+      arr.push(i);
+      console.log(arr);
+    }
+  };
+  maker();
 
 
 
@@ -159,7 +167,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+var addTen = function(num1) {
+ num1 = numbers + 10;
+ for (var i = 0; i < num1.length; i++) {
+   var arr = [];
+ };
+}
+addTen(numbers);
 
 
 
@@ -180,12 +194,32 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number to both arr1 and arr2.
 //Write a function that is given arr1 and arr2 is it's only arguments. Return the array which is longest.
 
-  //Code Here
+ var adds = function(first, second) {
+    if (arr1.length > arr2.length) {
+      return arr1;
+    } else { 
+      return arr2;
+    }
+ }
+ console.log(arr1);
+ console.log(arr2);
+  adds(arr1, arr2);
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
-*/
+var both */
 
-  //Code Here
+var both = function(new1, new2) {
+var newA = arr1.concat(arr2);)
+console.log(newA);
+}
+both(arr1, arr2);
+
+
+
+
+
+
+

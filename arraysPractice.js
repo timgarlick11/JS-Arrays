@@ -207,7 +207,7 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 var addTen = function(arr) {
  for (var i = 0; i < arr.length; i++) {
-  arr = parseInt(arr[i]) + 10;
+  arr = parseInt(arr[i]) + 10[i];
 
  }
  return arr;
@@ -262,15 +262,17 @@ both(arr1, arr2);
 
 var nums = ["hello", "javascript", "awesome"];
 
-var finder = function(first, second) {
-
-  for (var i = 0; i < nums.length; i++) {
-    if (nums[i] === first) {
-      return false;
+var finder = function(string, myArray) {
+  for (var i = 0; i < myArray.length; i++) {
+    if (myArray[i] === string) {
+      return true;
     }
-  } else {return true}
+  } 
+  return false;
 }
-finder("lame", nums)
+
+finder("awesome", nums);
+
 
 // the answer
 

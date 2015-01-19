@@ -9,8 +9,11 @@ var arr = [10,20,30];
   }
 first(arr);
 
-//Next problem
-
+//class answer
+var first = function() {
+  return arr[0]
+}
+first(arr);
 
 
 var arr = [40,50,60];
@@ -19,13 +22,16 @@ var arr = [40,50,60];
 
   //Code Here
 var last = function() {        
-     return arr.length - 1;                                  
+     return arr[arr.length - 1];                                  
 }                                 
                                     
 last(arr);
 
-//Next Problem
-
+//class problem
+function last (arr) {
+  return arr[arr.length -1];
+}
+last(arr);
 
 var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
@@ -37,8 +43,14 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   looper(family);
 
 
-//Next problem
+//class answer
 
+var looper = function(myArray) {
+  for (var i = 0; i < myArray.length; i++) {
+    console.log(myArray[i]);
+  }
+}
+looper(family);
 
 
 var letters = ['A', 'B', 'C', 'D', 'E'];
@@ -52,7 +64,15 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   reversedLooper(letters);
 
 
-//Next Problem
+//class answer
+
+var reverseLooper = function(myArray) {
+ for ( var i = myArray.length; i > 0; i--){
+  console.log(myArray[i - 1]);
+ }
+
+}
+reverseLooper(letters);
 
 
 var nums = [1,2,3,6,22,98,45,23,22,12];
@@ -136,7 +156,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
-  var removeItem = function(myGroceryList,)
+  var removeItem = function(myList, remove) {
+
+    for (var i = 0; i < myList.length; i++) {
+      if (myList[i] === remove) {
+        myList.splice(i, 1);
+      }
+    }
+    console.log(myList);
+}
+removeItem(myGroceryList, 'chips');
+
+var addItem = function(myList, add) {
+  myList.push(add);
+  console.log(myList);
+}
+addItem(myGroceryList, 'Jerky');
+
+
+
 
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -167,11 +205,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-var addTen = function(num1) {
- num1 = numbers + 10;
- for (var i = 0; i < num1.length; i++) {
-   var arr = [];
- };
+var addTen = function(arr) {
+ for (var i = 0; i < arr.length; i++) {
+  arr = parseInt(arr[i]) + 10;
+
+ }
+ return arr;
 }
 addTen(numbers);
 
@@ -217,6 +256,41 @@ console.log(newA);
 }
 both(arr1, arr2);
 
+
+//morning challenge write a function called finder that accepts two parameters, the first one is a string and the second is an array.
+// have your function return true if the string is found in the array and false if it is not.
+
+var nums = ["hello", "javascript", "awesome"];
+
+var finder = function(first, second) {
+
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] === first) {
+      return false;
+    }
+  } else {return true}
+}
+finder("lame", nums)
+
+// the answer
+
+var words = ['cool','awesome','Tim'];
+var finder = function(string, myArray) {
+  for (var i = 0; i < myArray.length; i++) {
+    if (myArray[i] === words) {
+      return true;
+    }
+  }
+  return false;
+}
+finder('awesome', words);
+
+// one line answer
+
+var oneLine = (string, myArray {
+  return myArray.indexOf(string) > -1 ? true : false;
+}
+oneLine("awesome", words)
 
 
 

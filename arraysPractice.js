@@ -205,9 +205,10 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-var addTen = function(arr) {
- for (var i = 0; i < arr.length; i++) {
-  arr = parseInt(arr[i]) + 10[i];
+var addTen = function(numbers1) {
+ var arr = [];
+ for (var i = 0; i < numbers1.length; i++) {
+  arr.push(parseInt(numbers1[i]) + 10);
 
  }
  return arr;
